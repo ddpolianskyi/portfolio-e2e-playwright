@@ -1,0 +1,26 @@
+{
+	"name": "portfolio-e2e-playwright",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "npx playwright test --headed",
+		"test:headless": "npx playwright test",
+		"test:chrome": "npx playwright test --project=Chrome --headed",
+		"test:chrome:headless": "npx playwright test --project=Chrome ",
+		"test:firefox": "npx playwright test --project=Firefox --headed",
+		"test:firefox:headless": "npx playwright test --project=Firefox ",
+		"test:safari": "npx playwright test --project=Safari --headed",
+		"test:safari:headless": "npx playwright test --project=Safari ",
+		"report": "npx allure generate allure-results -o allure-report --clean && npx allure open",
+		"report:generate": "npx allure generate allure-results --clean",
+		"report:clear": "del allure-results\\* /q"
+	},
+	"author": "Daniel Polianskyi",
+	"license": "ISC",
+	"devDependencies": {
+		"@playwright/test": "^1.35.1",
+		"allure-commandline": "^2.22.4",
+		"allure-playwright": "^2.4.0"
+	}
+}

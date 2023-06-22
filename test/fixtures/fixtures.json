@@ -1,0 +1,11 @@
+{
+    "validUsername": "standard_user",
+    "nonExistingUsername": "nonExisting_user",
+    "lockedOutUsername": "locked_out_user",
+
+    "validPassword": "secret_sauce",
+
+    "firstName": "John",
+    "lastName": "Doe",
+    "postalCode": "000-34"
+}

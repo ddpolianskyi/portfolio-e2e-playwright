@@ -1,0 +1,36 @@
+name: Run
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  Run:
+    name: Run
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Install Playwright browsers
+        run: |
+          npx playwright install
+          npx playwright install-deps
+
+      - name: Run tests
+        run: npm run test:headless
+        continue-on-error: true
+      
+      - name: Generate Allure HTML report
+        run: npm run report:generate
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
