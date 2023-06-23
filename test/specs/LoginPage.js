@@ -25,7 +25,7 @@ test.describe('Login', () => {
         await loginPage.enterPassword(fixtures.validPassword);
         await loginPage.loginButton.click();
         await expect(loginPage.errorMessage).toBeHidden();
-        await expect(page).toHaveURL(/inventory.html$/)
+        await expect(page).toHaveURL(/inventory.html$/);
     });
 
     test('Should not login with empty fields', async ({ page }) => {

@@ -15,7 +15,7 @@ exports.CartPage = class CartPage {
         this.checkoutContinueButton = this.page.locator('#continue');
         this.checkoutFinishButton = this.page.locator('#finish');
         this.checkoutErrorMessage = this.page.locator('[data-test="error"]');
-    }
+    };
 
     itemTitle(num){ return this.page.locator(`//*[@class="cart_item"][${num}]//*[@class="inventory_item_name"]`) };
     itemRemoveFromCartButton(num){ return this.page.locator(`//*[@class="cart_item"][${num}]//*[contains(@data-test, "remove")]`) };
@@ -36,4 +36,4 @@ exports.CartPage = class CartPage {
         await expect(this.checkoutErrorMessage).toBeVisible();
         await expect(this.checkoutErrorMessage).toHaveText(errorName);
     };
-}
+};

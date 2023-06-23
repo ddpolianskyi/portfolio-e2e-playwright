@@ -15,5 +15,5 @@ exports.InventoryPage = class InventoryPage {
         await this.itemTitle(num).click();
         await expect(this.itemDetailsName).toBeVisible();
         await expect(this.page).toHaveURL(/inventory-item.html$/);
-    }
+    };
 };

@@ -20,6 +20,6 @@ exports.BasePage = class BasePage {
         await loginPage.enterPassword(fixtures.validPassword);
         await loginPage.loginButton.click();
         await expect(loginPage.errorMessage).toBeHidden();
-        await expect(this.page).toHaveURL(/inventory.html$/)
+        await expect(this.page).toHaveURL(/inventory.html$/);
     };
 };
